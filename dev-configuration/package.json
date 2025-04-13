@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/js": "^9.24.0",
+    "commitizen": "^4.3.1",
+    "conventional-changelog": "^6.0.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-writer": "^8.0.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.24.0",
+    "eslint-plugin-react": "^7.37.5",
+    "git-cz": "^4.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "commit": "cross-env CZ_RUNNING=true git cz",
+    "changelog": "node ./scripts/generate-changelog.mjs",
+    "lint": "eslint . --max-warnings=0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    },
+    "cz-changelog": {
+      "path": "./conventional-changelog-config.js"
+    }
+  }
+}
